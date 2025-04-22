@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Darker Grotesque, sans-serif;
+    background-color: #0c0c0c; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+#all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #f3f3f3; 
+}
+
+aside a:hover {
+    opacity: 0.5;
+    transition: ease-in-out 0.3s;
+}
+
+nav a:hover {
+    color: #ff0000; 
+    transition: ease-in-out 0.3s;
+}
+
+.hover-underline::after {
+    background-color: #ff0000;
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+nav a.hover-underline {
+    position: relative;
+}
+
+.hover-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Classe para o item ativo */
+.active-menu::after {
+    transform: scaleX(1) !important;
+    transform-origin: bottom left !important;
+}
+
+#main-container {
+    width: 85%;
+    max-width: 85%;
+    height: 90vh;
+    max-height: 90vh;
+    background-color: #f3f3f3; 
+    color: #0c0c0c; 
+    border: 10px #ff0000; 
+    border-style: ridge;
+    display: flex;
+    flex-direction: column; 
+    margin: 10px;
+    margin-bottom: 0;
+}
+
+#header {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: none;
+}
+
+img {
+    height: auto;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+nav,
+nav ul {
+    background-color: #0c0c0c; 
+    color: #f3f3f3; 
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    width: 100%;
+    max-width: 100%;
+    height: 40px;
+    max-height: 40px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+aside {
+    width: 40%;
+    height: 290px;
+    max-height: 290px;
+    background-color: #ff0000; 
+    padding: 10px;
+    border: 5px solid #0c0c0c; 
+    border-style: ridge;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 15px;
+    margin-right: 0;
+}
+
+aside ul,
+aside a {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #f3f3f3;
+}
+
+#content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    width: 520px;
+    max-width: 520px;
+    height: auto;
+}
+
+article {
+    background-color: #0c0c0c; 
+    color: #f3f3f3; 
+    padding: 12px;
+    padding-top: 2px;
+    border: 5px solid #0c0c0c; 
+    border-style: ridge;
+    display: flex;
+    flex-direction: column;
+    height: 168px;
+    max-height: 168px;
+    width: 395px;
+    overflow-y: auto;
+    scrollbar-color: #ff0000 #0c0c0c;
+    scrollbar-width: thin;
+}
+
+article p {
+    font-weight: 380;
+    color: #949494;
+}
+
+#section { 
+    padding: 10px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+section h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#footer-container {
+    color: #949494; 
+    text-align: center;
+    padding: 4px;
+    line-height: 16px;
+    font-size: 16px;
+}
+
+#em,
+#in, 
+#tw {
+    margin-top: 4px;
+    width: 12px;
+    height: 12px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#social-icons a:hover {
+    opacity: 0.5;
+    transition: ease-in-out 0.3s;
+}
+
+#em {
+    background-image: url('/static/imgs/envelope.png');
+}
+
+#in {
+    background-image: url('/static/imgs/instagram.png');
+}
+
+#tw {
+    background-image: url('/static/imgs/twitter.png');
+}
