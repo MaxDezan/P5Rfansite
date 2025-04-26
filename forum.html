@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P5R</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/imgs/p5rfv.png" type="image/x-icon">
+    <style>
+        #caixa-comentarios {
+            background-color: #0c0c0c;
+            border: 2px solid #ff0000;
+            padding: 15px;
+            margin-top: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+            scrollbar-color: #ff0000 #0c0c0c;
+            scrollbar-width: thin;
+        }
+
+        .comentario {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+            word-wrap: break-word;
+            color: #f3f3f3;
+            font-weight: 400;
+        }
+
+        .comentario:last-child {
+            border-bottom: none;
+        }
+
+        .data-comentario {
+            color: #777;
+            font-size: 14px;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        #form-comentario {
+            margin-top: 15px;
+            bottom: 0;
+            background-color: #0c0c0c;
+            padding-top: 10px;
+        }
+
+        #campo-comentario {
+            width: 100%;
+            background-color: #0c0c0c;
+            border: 1px solid #ff0000;
+            color: white;
+            padding: 8px;
+            margin-bottom: 10px;
+            resize: vertical;
+            min-height: 80px;
+            max-height: 150px;
+        }
+
+        #botao-enviar {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: Dark Grotesque, sans-serif;
+        }
+
+        #botao-enviar:hover {
+            opacity: 0.7;
+            transition: ease-in-out 0.3s;
+        }
+
+        #conteudo-forum {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 0;
+            width: 496px;
+            max-width: 496px;
+            height: 100%;
+            overflow-y: auto;
+            scrollbar-color: #ff0000 #0c0c0c;
+            scrollbar-width: thin;
+        }
+
+        .sem-comentarios {
+            color: #777;
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body style="overflow: hidden;">
+    <div id="all">
+        <div id="main-container">
+            <header id="header">
+                <img src="/static/imgs/p5r.png" alt="Persona 5 Royal">
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="/" class="hover-underline {% if request.path == '/' %}active-menu{% endif %}">Home</a>
+                    </li>
+                    <li><a href="/guias"
+                            class="hover-underline {% if request.path == '/guias' %}active-menu{% endif %}">Guias</a>
+                    </li>
+                    <li><a href="/updates"
+                            class="hover-underline {% if request.path == '/updates' %}active-menu{% endif %}">Updates</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <main style="flex: 1; overflow: hidden;">
+                <div id="conteudo-forum">
+                    <span style="display: flex;">
+                        <h1 style="font-size: 46px; font-weight: 750; text-shadow: 3px 3px 3px #7a7a7a;">Fórum Anônimo
+                        </h1>
+                        <img src="/static/imgs/jgif.gif" alt="joker"
+                            style="width: 90px; height: 90px; position: absolute; left: 56%; top: 40%;">
+                    </span>
+
+                    <div id="caixa-comentarios">
+                        <h2 style="margin-bottom: 20px; color: #f3f3f3;">Comentários Anônimos</h2>
+
+                        <!-- Lista de Comentários -->
+                        {% if comentarios %}
+                        {% for comentario in comentarios %}
+                        <div class="comentario">
+                            <p>{{ comentario.texto }}</p>
+                            <div class="data-comentario">{{ comentario.data | formatar_data }}</div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <p class="sem-comentarios">Nenhum comentário ainda. Seja o primeiro a comentar!</p>
+                        {% endif %}
+
+                        <!-- Formulário para novo comentário -->
+                        <form id="form-comentario" action="/adicionar_comentario" method="POST">
+                            <textarea id="campo-comentario" name="comentario" rows="3"
+                                placeholder="Deixe seu comentário anônimo (máx. 500 caracteres)..." required
+                                maxlength="500"></textarea>
+                            <button type="submit" id="botao-enviar">Enviar Comentário</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="footer-container">
+            <footer>
+                <p>© {{ ano_atual }} Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>
+                <p>Site criado por fãs, sem afiliação ou fins lucrativos</p>
+                <span id="social-icons">
+                    <a href="#" id="em" aria-label="email"></a>
+                    <a href="#" id="in" aria-label="instagram"></a>
+                    <a href="#" id="tw" aria-label="twitter"></a>
+                </span>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Foco automático no campo de comentário
+        document.addEventListener('DOMContentLoaded', function () {
+            const campoComentario = document.getElementById('campo-comentario');
+            if (campoComentario) {
+                campoComentario.focus();
+            }
+
+            // Limitar caracteres
+            campoComentario.addEventListener('input', function () {
+                const maxLength = 500;
+                if (this.value.length > maxLength) {
+                    this.value = this.value.substring(0, maxLength);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
