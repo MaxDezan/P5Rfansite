@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 on:
   push:
-    branches: [main]  
+    branches: [main]
 
 jobs:
   deploy:
@@ -9,10 +9,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Remove arquivos desnecessários (opcional)
       - name: Cleanup
         run: |
           rm -f app.py forum.db
 
-      - name: Prepare HTML Files
+      # Copia TODOS os arquivos estáticos (HTML, CSS, imagens)
+      - name: Prepare Files
         run: |
-          cp templates/*.html .
+          cp -r templates/* .
+          cp -r static .
+          
+      # Corrige caminhos nos arquivos HTML (substitui /static/ por static/)
+      - name: Fix Paths
+        run: |
+          sed -i 's/\/static\//static\//g' *.html
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
