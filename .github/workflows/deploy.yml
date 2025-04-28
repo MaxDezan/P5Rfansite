@@ -3,29 +3,24 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write  # Adicione esta permissão
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      # Remove arquivos desnecessários
-      - name: Cleanup
-        run: |
-          rm -f app.py forum.db
-
-      # Copia apenas arquivos HTML para a raiz
+      # Copia arquivos HTML
       - name: Copy HTML files
         run: |
           cp templates/*.html .
-          
-      # Corrige caminhos nos arquivos HTML
-      - name: Fix Paths
-        run: |
           sed -i 's/\/static\//static\//g' *.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main  # Mude para sua branch principal
           publish_dir: .
