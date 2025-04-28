@@ -9,18 +9,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Remove arquivos desnecessários (opcional)
+      # Remove arquivos desnecessários
       - name: Cleanup
         run: |
           rm -f app.py forum.db
 
-      # Copia TODOS os arquivos estáticos (HTML, CSS, imagens)
-      - name: Prepare Files
+      # Copia apenas arquivos HTML para a raiz
+      - name: Copy HTML files
         run: |
-          cp -r templates/* .
-          cp -r static .
+          cp templates/*.html .
           
-      # Corrige caminhos nos arquivos HTML (substitui /static/ por static/)
+      # Corrige caminhos nos arquivos HTML
       - name: Fix Paths
         run: |
           sed -i 's/\/static\//static\//g' *.html
