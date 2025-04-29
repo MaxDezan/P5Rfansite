@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P5R</title>
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="icon" href="static/imgs/p5rfv.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/imgs/p5rfv.png" type="image/x-icon">
     <style>
         #caixa-comentarios {
             background-color: #0c0c0c;
@@ -100,17 +100,17 @@
     <div id="all">
         <div id="main-container">
             <header id="header">
-                <img src="static/imgs/p5r.png" alt="Persona 5 Royal">
+                <img src="/static/imgs/p5r.png" alt="Persona 5 Royal">
             </header>
 
             <nav>
                 <ul>
-                    <li><a href="/" class="hover-underline {% if request.path == '/' %}active-menu{% endif %}">Home</a>
+                    <li><a href="/index.html" class="hover-underline {% if request.path == '/' %}active-menu{% endif %}">Home</a>
                     </li>
-                    <li><a href="/guias"
+                    <li><a href="/templates/guias.html"
                             class="hover-underline {% if request.path == '/guias' %}active-menu{% endif %}">Guias</a>
                     </li>
-                    <li><a href="/updates"
+                    <li><a href="/templates/updates.html"
                             class="hover-underline {% if request.path == '/updates' %}active-menu{% endif %}">Updates</a>
                     </li>
                 </ul>

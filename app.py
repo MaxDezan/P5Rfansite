@@ -13,7 +13,6 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 def inject_ano():
     return {'ano_atual': datetime.now().year}
 
-# Configuração do banco de dados
 def get_db_connection():
     conn = sqlite3.connect('forum.db')
     conn.row_factory = sqlite3.Row
@@ -39,11 +38,9 @@ def formatar_data(value):
             value = datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
         except ValueError:
             return value
-    # Converte para o fuso horário correto
     value = value.replace(tzinfo=pytz.utc).astimezone(tz)
     return value.strftime('%d/%m/%Y às %H:%M')
 
-# Rotas principais
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -96,7 +93,7 @@ if __name__ == '__main__':
     Timer(1, open_browser).start()  # Abre o navegador após 1 segundo
     app.run(debug=True, use_reloader=False)  # use_reloader=False para evitar abrir o navegador duas vezes
 
-# Para resetar os comentários, descomente a linha abaixo e execute o script:
+# deletar comentario
 # python -c "
 # import sqlite3; 
 # conn = sqlite3.connect('forum.db');
@@ -104,4 +101,3 @@ if __name__ == '__main__':
 # conn.commit();
 # print('Comentários resetados!');
 # conn.close()
-# "
