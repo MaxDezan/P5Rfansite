@@ -43,26 +43,26 @@ def formatar_data(value):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('/index.html')
     
 @app.route('/guias')
 def guias():
-    return render_template('guias.html')
+    return render_template('/templates/guias.html')
 
 @app.route('/updates')
 def updates():
-    return render_template('updates.html')
+    return render_template('/templates/updates.html')
 
 @app.route('/forum')
 def forum():
     conn = get_db_connection()
     comentarios = conn.execute('SELECT *, datetime(data) as data_formatada FROM comentarios ORDER BY data DESC').fetchall()
     conn.close()
-    return render_template('forum.html', comentarios=comentarios)
+    return render_template('/templates/forum.html', comentarios=comentarios)
 
 @app.route('/personagens')
 def personagens():
-    return render_template('personagens.html')
+    return render_template('/templates/personagens.html')
 
 @app.route('/adicionar_comentario', methods=['POST'])
 def adicionar_comentario():
@@ -81,17 +81,6 @@ def page_not_found(e):
 @app.before_request
 def check_routes():
     print(f"Acessando: {request.path}")
-
-import webbrowser
-from threading import Timer
-
-def open_browser():
-    webbrowser.open_new('http://127.0.0.1:5000/')
-
-if __name__ == '__main__':
-    init_db()
-    Timer(1, open_browser).start()  # Abre o navegador após 1 segundo
-    app.run(debug=True, use_reloader=False)  # use_reloader=False para evitar abrir o navegador duas vezes
 
 # deletar comentario
 # python -c "

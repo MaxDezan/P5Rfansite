@@ -128,7 +128,6 @@
                     <div id="caixa-comentarios">
                         <h2 style="margin-bottom: 20px; color: #f3f3f3;">Comentários Anônimos</h2>
 
-                        <!-- Lista de Comentários -->
                         {% if comentarios %}
                         {% for comentario in comentarios %}
                         <div class="comentario">
@@ -140,7 +139,6 @@
                         <p class="sem-comentarios">Nenhum comentário ainda. Seja o primeiro a comentar!</p>
                         {% endif %}
 
-                        <!-- Formulário para novo comentário -->
                         <form id="form-comentario" action="/adicionar_comentario" method="POST">
                             <textarea id="campo-comentario" name="comentario" rows="3"
                                 placeholder="Deixe seu comentário anônimo (máx. 500 caracteres)..." required
@@ -165,14 +163,12 @@
     </div>
 
     <script>
-        // Foco automático no campo de comentário
         document.addEventListener('DOMContentLoaded', function () {
             const campoComentario = document.getElementById('campo-comentario');
             if (campoComentario) {
                 campoComentario.focus();
             }
 
-            // Limitar caracteres
             campoComentario.addEventListener('input', function () {
                 const maxLength = 500;
                 if (this.value.length > maxLength) {
