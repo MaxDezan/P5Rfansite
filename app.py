@@ -7,7 +7,7 @@ def get_local_time():
     tz = pytz.timezone('America/Sao_Paulo')
     return datetime.now(tz)
 
-app = Flask(__name__, static_folder='static', template_folder='templates')
+app = Flask(__name__, static_folder='static', template_folder='')
 
 @app.context_processor
 def inject_ano():
@@ -47,22 +47,22 @@ def home():
     
 @app.route('/guias')
 def guias():
-    return render_template('/templates/guias.html')
+    return render_template('guias.html')
 
 @app.route('/updates')
 def updates():
-    return render_template('/templates/updates.html')
+    return render_template('updates.html')
 
 @app.route('/forum')
 def forum():
     conn = get_db_connection()
     comentarios = conn.execute('SELECT *, datetime(data) as data_formatada FROM comentarios ORDER BY data DESC').fetchall()
     conn.close()
-    return render_template('/templates/forum.html', comentarios=comentarios)
+    return render_template('forum.html', comentarios=comentarios)
 
 @app.route('/personagens')
 def personagens():
-    return render_template('/templates/personagens.html')
+    return render_template('personagens.html')
 
 @app.route('/adicionar_comentario', methods=['POST'])
 def adicionar_comentario():
@@ -81,6 +81,11 @@ def page_not_found(e):
 @app.before_request
 def check_routes():
     print(f"Acessando: {request.path}")
+
+if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
 
 # deletar comentario
 # python -c "
