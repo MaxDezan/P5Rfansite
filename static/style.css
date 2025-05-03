@@ -60,12 +60,6 @@ nav a.hover-underline {
     transform-origin: bottom left;
 }
 
-/* Classe para o item ativo */
-.active-menu::after {
-    transform: scaleX(1) !important;
-    transform-origin: bottom left !important;
-}
-
 #main-container {
     width: 85%;
     max-width: 85%;
