@@ -8,7 +8,7 @@
 
 body {
     font-family: Darker Grotesque, sans-serif;
-    background-color: #0c0c0c; 
+    background-color: #0c0c0c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #f3f3f3; 
+    color: #f3f3f3;
 }
 
 aside a:hover {
@@ -34,7 +34,7 @@ aside a:hover {
 }
 
 nav a:hover {
-    color: #ff0000; 
+    color: #ff0000;
     transition: ease-in-out 0.3s;
 }
 
@@ -71,12 +71,12 @@ nav a.hover-underline {
     max-width: 85%;
     height: 90vh;
     max-height: 90vh;
-    background-color: #f3f3f3; 
-    color: #0c0c0c; 
-    border: 10px #ff0000; 
+    background-color: #f3f3f3;
+    color: #0c0c0c;
+    border: 10px #ff0000;
     border-style: ridge;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     margin: 10px;
     margin-bottom: 0;
 }
@@ -99,8 +99,8 @@ img {
 
 nav,
 nav ul {
-    background-color: #0c0c0c; 
-    color: #f3f3f3; 
+    background-color: #0c0c0c;
+    color: #f3f3f3;
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -126,9 +126,9 @@ aside {
     width: 40%;
     height: 290px;
     max-height: 290px;
-    background-color: #ff0000; 
+    background-color: #ff0000;
     padding: 10px;
-    border: 5px solid #0c0c0c; 
+    border: 5px solid #0c0c0c;
     border-style: ridge;
     display: flex;
     flex-direction: column;
@@ -158,11 +158,11 @@ aside a {
 }
 
 article {
-    background-color: #0c0c0c; 
-    color: #f3f3f3; 
+    background-color: #0c0c0c;
+    color: #f3f3f3;
     padding: 12px;
     padding-top: 2px;
-    border: 5px solid #0c0c0c; 
+    border: 5px solid #0c0c0c;
     border-style: ridge;
     display: flex;
     flex-direction: column;
@@ -179,7 +179,7 @@ article p {
     color: #949494;
 }
 
-#section { 
+#section {
     padding: 10px;
     padding-top: 0;
     display: flex;
@@ -192,7 +192,7 @@ section h2 {
 }
 
 #footer-container {
-    color: #949494; 
+    color: #949494;
     text-align: center;
     padding: 4px;
     line-height: 16px;
@@ -200,7 +200,7 @@ section h2 {
 }
 
 #em,
-#in, 
+#in,
 #tw {
     margin-top: 4px;
     width: 12px;
