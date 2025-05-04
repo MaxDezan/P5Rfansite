@@ -21,6 +21,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 50%;
+    max-height: 50%;
+    width: 60%;
+    max-width: 60%;
+    
 }
 
 a {
@@ -61,10 +66,10 @@ nav a.hover-underline {
 }
 
 #main-container {
-    width: 85%;
-    max-width: 85%;
-    height: 90vh;
-    max-height: 90vh;
+    width: 68%;
+    max-width: 68%;
+    height: 50%;
+    max-height: 50%;
     background-color: #f3f3f3;
     color: #0c0c0c;
     border: 10px #ff0000;
@@ -113,13 +118,14 @@ nav ul {
 main {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 20px;
+    height: 300px;
+    width: 100%;
+    max-width: 100%;
 }
 
 aside {
-    width: 40%;
-    height: 290px;
-    max-height: 290px;
+    height: auto;
     background-color: #ff0000;
     padding: 10px;
     border: 5px solid #0c0c0c;
@@ -136,19 +142,18 @@ aside a {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 2px;
     color: #f3f3f3;
+    height: auto;
 }
 
 #content {
-    padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin: 0;
-    width: 520px;
-    max-width: 520px;
+    width: 100%;
+    max-width: 100%;
     height: auto;
+    margin-bottom: 16px;
 }
 
 article {
@@ -160,29 +165,25 @@ article {
     border-style: ridge;
     display: flex;
     flex-direction: column;
-    height: 168px;
-    max-height: 168px;
-    width: 395px;
+    height: 200px;
+    max-height: 200px;
+    width: 95%;
     overflow-y: auto;
     scrollbar-color: #ff0000 #0c0c0c;
     scrollbar-width: thin;
 }
 
 article p {
-    font-weight: 380;
+    font-size: 18px;
+    font-weight: 432;
     color: #949494;
 }
 
 #section {
-    padding: 10px;
-    padding-top: 0;
+    padding: 4px 4px 10px;
     display: flex;
-    flex-direction: column;
-}
-
-section h2 {
-    margin-top: 0;
-    padding-top: 0;
+    flex-flow: column nowrap;
+    width: 100%;
 }
 
 #footer-container {
@@ -191,49 +192,31 @@ section h2 {
     padding: 4px;
     line-height: 16px;
     font-size: 16px;
+
 }
 
-#em,
-#in,
-#tw {
-    margin-top: 4px;
-    width: 12px;
-    height: 12px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
+.article {
+    width: 100%;
 }
 
-#social-icons {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-#social-icons a:hover {
-    opacity: 0.5;
-    transition: ease-in-out 0.3s;
-}
-
-#em {
-    background-image: url('/static/imgs/envelope.png');
-}
-
-#in {
-    background-image: url('/static/imgs/instagram.png');
-}
-
-#tw {
-    background-image: url('/static/imgs/twitter.png');
+.article p {
+    font-size:20px
 }
 
 @media screen and (max-width: 768px) {
+    #all {
+        width: 80%;
+        max-width: 80%;
+        height: 40vh;
+        max-height: 40vh;
+        margin-top: 30px;
+    }
+    
     #main-container {
         width: 80%;
         max-width: 80%;
-        height: auto;
+        height: 40vh;
+        max-height: 40vh;
         margin-top: 30px;
     }
 
