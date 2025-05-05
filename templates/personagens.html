@@ -9,91 +9,99 @@
     <link rel="icon" href="/static/imgs/p5rfv.png" type="image/x-icon">
 </head>
 
-<body style="overflow: hidden;">
-    <div id="sprites" style="display: flex; justify-content: left;">
-        <img src="/static/imgs/jsprite.webp" alt="joker sprite" style="
-            height: 95vh;
-            width: 195px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 12%;
-            align-items: center;"></img>
-        <img src="/static/imgs/fsprite.webp" alt="futaba sprite" style="
-            height: 85vh;
-            width: 372px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 2%;
-            align-items: center;"></img>
-        <div id="all">
-            <div id="main-container">
-                <header id="header">
-                    <img src="/static/imgs/p5r.png" alt="Persona 5 Royal">
-                </header>
+<body style="overflow: scroll;">
+    <div id="all">
+        <div id="main-container">
+            <div id="sprites" style="display: flex; justify-content: left;">
+                <img src="/static/imgs/jsprite.webp" alt="joker sprite" style="
+                height: 95vh;
+                width: 195px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 12%;
+                align-items: center;"></img>
+                <img src="/static/imgs/fsprite.webp" alt="futaba sprite" style="
+                height: 85vh;
+                width: 372px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 2%;
+                align-items: center;"></img>
+                <div id="all">
+                    <div id="main-container">
+                        <header id="header">
+                            <img src="/static/imgs/p5r.png" alt="Persona 5 Royal">
+                        </header>
 
-                <nav>
-                    <ul>
-                        <li><a href="/index.html" class="hover-underline">Home</a></li>
-                        <li><a href="/templates/guias.html" class="hover-underline">Guias</a>
-                        </li>
-                        <li><a href="/templates/updates.html" class="hover-underline">Updates</a>
-                        </li>
-                    </ul>
-                </nav>
+                        <nav>
+                            <ul>
+                                <li><a href="/index.html" class="hover-underline">Home</a></li>
+                                <li><a href="/templates/guias.html" class="hover-underline">Guias</a>
+                                </li>
+                                <li><a href="/templates/updates.html" class="hover-underline">Updates</a>
+                                </li>
+                            </ul>
+                        </nav>
 
-                <main style="flex: 1; overflow: hidden;">
-                    <div id="content" style="
-                padding: 15px;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                margin: 0;
-                width: 496px;
-                max-width: 496px;
-                height: 100%;
-                overflow-y: auto;
-                scrollbar-color: #ff0000 #0c0c0c;
-                scrollbar-width: thin;">
-                        <span style="display: flex; gap: 14px;">
-                            <h1 style="font-size: 46px; font-weight: 750; text-shadow: 3px 3px 3px #7a7a7a;">Personagens
-                            </h1>
-                            <img src="/static/imgs/chapeu.gif" alt="chápeu gif" style="width: 50px; height: 50px;">
-                        </span>
-                        <a href="#">
-                            <article style="background-image: url(/static/imgs/jheader.jpg); background-size: cover;">
-                                <h2 style="
+                        <main style="flex: 1; overflow: hidden;">
+                            <div id="content" style="
+                                padding: 10px;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                margin: 2px;
+                                width: 100%;
+                                max-width: 100%;
+                                height: 80%;
+                                overflow-y: auto;
+                                scrollbar-color: #ff0000 #0c0c0c;
+                                scrollbar-width: thin;">
+                                <span style="display: flex; gap: 14px;">
+                                    <h1 style="font-size: 46px; font-weight: 750; text-shadow: 3px 3px 3px #7a7a7a;">
+                                        Personagens
+                                    </h1>
+                                    <img src="/static/imgs/chapeu.gif" alt="chápeu gif"
+                                        style="width: 50px; height: 50px;">
+                                </span>
+                                <a href="#">
+                                    <article
+                                        style="background-image: url(/static/imgs/jheader.jpg); background-size: cover;">
+                                        <h2 style="
                                width: 100%;
                                background-color: #0c0c0cd3;">Joker (Ren Amamiya)</h2>
-                            </article>
-                        </a>
+                                    </article>
+                                </a>
 
-                        <a href="#">
-                            <article style="background-image: url(/static/imgs/fheader.webp); background-size: cover;">
-                                <h2 style="
+                                <a href="#">
+                                    <article
+                                        style="background-image: url(/static/imgs/fheader.webp); background-size: cover;">
+                                        <h2 style="
                                width: 100%;
                                background-color: #0c0c0cd3;">Futaba Sakura</h2>
-                            </article>
-                        </a>
+                                    </article>
+                                </a>
 
-                        <a href="#">
-                            <article style="background-image: url(/static/imgs/mheader.jpg); background-size: cover;">
-                                <h2 style="
+                                <a href="#">
+                                    <article
+                                        style="background-image: url(/static/imgs/mheader.jpg); background-size: cover;">
+                                        <h2 style="
                                width: 100%;
                                background-color: #0c0c0cd3;">Morgana</h2>
-                            </article>
-                        </a>
-                        <p style="text-align: center;">Mais em breve &#128064;</p>
+                                    </article>
+                                </a>
+                                <p style="text-align: center;">Mais em breve &#128064;</p>
+                            </div>
+                        </main>
                     </div>
-                </main>
-            </div>
-            <div id="footer-container">
-                <footer>
-                    <p>© 2025 Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>
-                    <p>Site criado por fãs, sem afiliação ou fins lucrativos</p>
-
-                </footer>
+                    <div id="footer-container">
+                        <footer>
+                            <p>© 2025 Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>
+                            <p>Site criado por fãs, sem afiliação ou fins lucrativos</p>
+                    </div>
+                    </footer>
+                </div>
             </div>
         </div>
 </body>
