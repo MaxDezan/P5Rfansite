@@ -105,40 +105,33 @@
 
             <nav>
                 <ul>
-                    <li><a href="/index.html" class="hover-underline">Home</a>
-                    </li>
-                    <li><a href="/templates/guias.html" class="hover-underline=">Guias</a>
-                    </li>
-                    <li><a href="/templates/updates.html" class="hover-underline=">Updates</a>
-                    </li>
+                    <li><a href="/index.html" class="hover-underline">Home</a></li>
+                    <li><a href="/templates/guias.html" class="hover-underline=">Guias</a></li>
+                    <li><a href="/templates/updates.html" class="hover-underline=">Updates</a></li>
                 </ul>
             </nav>
 
             <main style="flex: 1; overflow: hidden;">
                 <div id="conteudo-forum">
                     <span style="display: flex;">
-                        <h1 style="font-size: 46px; font-weight: 750; text-shadow: 3px 3px 3px #7a7a7a;">Fórum Anônimo
-                        </h1>
-                        <img src="/static/imgs/jgif.gif" alt="joker"
-                            style="width: 90px; height: 90px; position: absolute; left: 56%; top: 40%;">
+                        <h1 style="font-size: 46px; font-weight: 750; text-shadow: 3px 3px 3px #7a7a7a;">Fórum Anônimo</h1>
+                        <img src="/static/imgs/jgif.gif" alt="joker" style="width: 90px; height: 90px; position: absolute; left: 56%; top: 40%;">
                     </span>
 
                     <div id="caixa-comentarios">
                         <h2 style="margin-bottom: 20px; color: #f3f3f3;">Comentários Anônimos</h2>
-
-
                         <p class="sem-comentarios">Nenhum comentário ainda. Seja o primeiro a comentar!</p>
-
                         <form id="form-comentario" action="/adicionar_comentario" method="POST">
                             <textarea id="campo-comentario" name="comentario" rows="3"
-                                placeholder="Deixe seu comentário anônimo (máx. 500 caracteres)..." required
-                                maxlength="500"></textarea>
+                                placeholder="Deixe seu comentário anônimo (máx. 500 caracteres)..." required maxlength="500">
+                            </textarea>
                             <button type="submit" id="botao-enviar">Enviar Comentário</button>
                         </form>
                     </div>
                 </div>
             </main>
         </div>
+        
         <div id="footer-container">
             <footer>
                 <p>© 2025 Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>
