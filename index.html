@@ -2,59 +2,63 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>P5R</title>
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="icon" href="static/imgs/p5rfv.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+    </style>
+    <link rel="icon" href="static/imgs/p5rfv.png" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+        .scroll-page {@apply overflow-y-auto h-screen;}
+        .main-container {@apply bg-neutral-100 border-red-600 border-[10px] border-ridge flex flex-col mx-auto my-2 md:w-4/5 lg:w-3/5 animate__animated animate__fadeIn;}
+        .header-img {@apply w-full max-h-52 object-cover;}
+        .nav-menu {@apply flex justify-center items-center bg-neutral-900 text-neutral-100 gap-6 text-lg h-10;}
+        .aside-util {@apply bg-red-600 border-black border-[5px] border-ridge p-2 flex flex-col gap-1;}
+        .content-area {@apply flex flex-col gap-4 p-2 w-full;}
+        .article-box {@apply bg-neutral-900 text-neutral-100 p-3 border-black border-[5px] border-ridge overflow-y-auto max-h-52;}
+        .footer {@apply text-neutral-500 text-center text-sm py-2;}
+        .title-main {@apply text-3xl font-extrabold text-neutral-900;}
+        .link-hover {@apply hover:text-red-600;}
+        }
+    </style>
 </head>
 
-<body>
-    <div id="all">
-        <div id="main-container">
-            <header id="header">
-                <img src="static/imgs/p5r.png" alt="Persona 5 Royal">
-            </header>
-            <nav>
-                <ul>
-                    <li><a href="/" class="hover-underline">Home</a></li>
-                    <li><a href="/templates/guias.html" class="hover-underline">Guias</a></li>
-                    <li><a href="/templates/updates.html" class="hover-underline">Updates</a></li>
-                </ul>
-            </nav>
-
-            <main>
-                <aside>
-                    <h2 style="color: #f3f3f3; text-shadow: 3px 3px 3px #0c0c0c;">Utilidades</h2>
-                    <ul>
-                        <li><a href="https://atlus.com/" target="_blank">ATLUS</a></li>
-                        <li><a href="/templates/personagens.html">Personagens</a></li>
-                        <li><a href="/templates/forum.html">Fórum Anônimo</a></li>
-                        <li><a href="https://aqiu384.github.io/megaten-fusion-tool/p5r/personas" target="_blank">Fusion Guide</a></li>
-                        <li><a href="https://megamitensei.fandom.com/wiki/List_of_Persona_5_Personas"target="_blank">Compendium</a></li>
-                        <li><a href="https://www.reddit.com/r/Persona5/" target="_blank">r/Persona5</a></li>
-                    </ul>
-                </aside>
-                <div id="content">
-                    <section id="section">
-                        <h1 style="font-size: 34px; font-weight: 750; color: #0c0c0c; text-shadow: 3px 3px 3px #7a7a7a;">Persona 5 Royal</h1>
-                        <p style="font-weight: 580px; font-size: 18px;">Seja bem vindo(a) ao meu fansite dedicado a P5R!
-                        </p>
-                    </section>
-                    <article>
-                        <h2 style="font-size: 26px;">Começando do começo...</h2>
-                        <p>Este site tem o intuito de reunir informações
-                            úteis sobre o jogo, como guias, dicas e recursos úteis para a sua gameplay.
-                            Temos uma variedade de links, descrições de personagens e muito mais.
-                            A página está em constante atualização, então fique ligado para novidades!</p>
-                        </p>
-                    </article>
-                </div>
-            </main>
-        </div>
-        
-        <footer id="footer-container">
-            <p> ©2025 Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>
+<body class="scroll-page">
+    <div class="main-container">
+        <header>
+            <img src="static/imgs/p5r.png" alt="Persona 5 Royal" class="header-img" />
+        </header>
+        <nav class="nav-menu">
+            <a href="/" class="link-hover">Home</a>
+            <a href="/templates/guias.html" class="link-hover">Guias</a>
+            <a href="/templates/updates.html" class="link-hover">Updates</a>
+        </nav>
+        <main class="flex flex-col md:flex-row gap-4 p-2 flex-1">
+            <aside class="aside-util">
+                <h2>Utilidades</h2>
+                <a href="https://atlus.com/" target="_blank">ATLUS</a>
+                <a href="/templates/personagens.html">Personagens</a>
+                <a href="/templates/forum.html">Fórum Anônimo</a>
+                <a href="https://aqiu384.github.io/megaten-fusion-tool/p5r/personas" target="_blank">Fusion Guide</a>
+                <a href="https://megamitensei.fandom.com/wiki/List_of_Persona_5_Personas" target="_blank">Compendium</a>
+                <a href="https://www.reddit.com/r/Persona5/" target="_blank">r/Persona5</a>
+            </aside>
+            <div class="content-area">
+                <section>
+                    <h1 class="title-main">Persona 5 Royal</h1>
+                    <p>Seja bem vindo(a) ao meu fansite dedicado a P5R!</p>
+                </section>
+                <article class="article-box">
+                    <h2>Começando do começo...</h2>
+                    <p>Site com guias, dicas e informações. Sempre atualizado!</p>
+                </article>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>©2025 Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>
             <p>Site criado por fãs, sem afiliação ou fins lucrativos</p>
         </footer>
     </div>
