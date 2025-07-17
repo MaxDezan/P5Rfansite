@@ -3,28 +3,52 @@
 
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Fórum - P5R</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
     </style>
-    <link rel="icon" href="static/imgs/p5rfv.png" type="image/x-icon" />
+    <link rel="icon" href="static/imgs/p5rfv.png" type="image/x-icon"/>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style type="text/tailwindcss">
         @layer utilities {
-        .scroll-page {@apply overflow-y-auto h-screen;}
-        .main-container {@apply bg-neutral-100 border-red-600 border-[10px] border-ridge flex flex-col mx-auto my-2 md:w-4/5 lg:w-3/5 animate-fadeIn;}
-        .header-img {@apply w-full max-h-52 object-cover;}
-        .nav-menu {@apply flex justify-center items-center bg-neutral-900 text-neutral-100 gap-6 text-lg h-10;}
-        .forum-content {@apply flex flex-col gap-4 p-2 w-full;}
-        .comment-box {@apply bg-neutral-900 text-neutral-100 p-3 border-black border-[5px] border-ridge overflow-y-auto max-h-80 animate__animated animate__fadeInUp;}
-        .footer {@apply text-neutral-500 text-center text-sm py-2;}
-        .input-comment {@apply w-full bg-neutral-900 border-red-600 border p-2 text-neutral-100 resize-y min-h-[80px] max-h-[150px];}
-        .submit-btn {@apply bg-red-600 text-white font-bold px-4 py-2 hover:opacity-70 transition mt-2;}
-        .title-forum {@apply text-3xl font-extrabold text-neutral-900;}
-        .no-comment-text {@apply italic text-neutral-500;}
-        .link-hover {@apply hover:text-red-600;}
+            .scroll-page {
+                @apply overflow-y-auto h-screen;
+            }
+            .main-container {
+                @apply bg-neutral-100 border-red-600 border-[10px] border-ridge flex flex-col mx-auto my-2 md:w-4/5 lg:w-3/5 animate-fadeIn;
+            }
+            .header-img {
+                @apply w-full max-h-52 object-cover;
+            }
+            .nav-menu {
+                @apply flex justify-center items-center bg-neutral-900 text-neutral-100 gap-6 text-lg h-10;
+            }
+            .forum-content {
+                @apply flex flex-col gap-4 p-2 w-full;
+            }
+            .comment-box {
+                @apply bg-neutral-900 text-neutral-100 p-3 border-black border-[5px] border-ridge overflow-y-auto max-h-80 animate__animated animate__fadeInUp;
+            }
+            .footer {
+                @apply text-neutral-500 text-center text-sm py-2;
+            }
+            .input-comment {
+                @apply w-full bg-neutral-900 border-red-600 border p-2 text-neutral-100 resize-y min-h-[80px] max-h-[150px];
+            }
+            .submit-btn {
+                @apply bg-red-600 text-white font-bold px-4 py-2 hover:opacity-70 transition mt-2;
+            }
+            .title-forum {
+                @apply text-3xl font-extrabold text-neutral-900;
+            }
+            .no-comment-text {
+                @apply italic text-neutral-500;
+            }
+            .link-hover {
+                @apply hover:text-red-600;
+            }
         }
     </style>
 </head>
