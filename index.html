@@ -3,45 +3,53 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>P5R</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
-    </style>
     <link rel="icon" href="static/imgs/p5rfv.png" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         @layer utilities {
+            .bg-black-custom {
+                @apply bg-neutral-900;
+            }
             .scroll-page {
                 @apply overflow-y-auto h-screen;
             }
+            .wrapper {
+                @apply bg-black-custom p-4;
+            }
             .main-container {
-                @apply bg-neutral-100 border-red-600 border-[10px] border-double flex flex-col mx-auto my-2 md:w-4/5 lg:w-3/5;
+                @apply bg-black-custom border border-red-600 rounded-lg mx-auto my-4 md:my-8 md:w-4/5 lg:w-3/5 flex flex-col;
             }
             .header-img {
                 @apply w-full max-h-52 object-cover;
             }
             .nav-menu {
-                @apply flex justify-center items-center bg-neutral-900 text-neutral-100 gap-6 text-lg h-10;}
-            .aside-util {@apply bg-red-600 border-black border-[5px] border-double p-2 flex flex-col gap-1;}
-            .content-area {@apply flex flex-col gap-4 p-2 w-full;
+                @apply flex justify-center items-center bg-black-custom text-neutral-100 gap-6 text-lg h-10;
             }
-            .article-box {
-                @apply bg-neutral-900 text-neutral-100 p-3 border-black border-[5px] border-double overflow-y-auto max-h-52;
+            .aside-util {
+                @apply bg-red-600 border border-black p-2 flex flex-col gap-1;
+            }
+            .content-area {
+                @apply flex flex-col gap-4 p-2 w-full;
+            }
+            .article-scroll {
+                @apply bg-black-custom text-neutral-100 p-3 border border-black overflow-y-auto max-h-52;
             }
             .footer {
                 @apply text-neutral-500 text-center text-sm py-2;
             }
-            .title-main {@apply text-3xl font-extrabold text-neutral-900;
+            .title-main {
+                @apply text-3xl font-extrabold text-neutral-100;
             }
             .link-hover {
-                @apply hover:text-red-600;
+                @apply text-neutral-100 hover:text-red-600;
             }
         }
     </style>
 </head>
 
-<body class="scroll-page">
+<body class="wrapper">
     <div class="main-container">
         <header>
             <img src="static/imgs/p5r.png" alt="Persona 5 Royal" class="header-img" />
@@ -51,9 +59,9 @@
             <a href="/templates/guias.html" class="link-hover">Guias</a>
             <a href="/templates/updates.html" class="link-hover">Updates</a>
         </nav>
-        <main class="flex flex-col md:flex-row gap-4 p-2 flex-1">
+        <main class="flex flex-col md:flex-row gap-4 p-2">
             <aside class="aside-util">
-                <h2>Utilidades</h2>
+                <h2 class="text-neutral-100 font-bold">Utilidades</h2>
                 <a href="https://atlus.com/" target="_blank">ATLUS</a>
                 <a href="/templates/personagens.html">Personagens</a>
                 <a href="/templates/forum.html">Fórum Anônimo</a>
@@ -64,11 +72,16 @@
             <div class="content-area">
                 <section>
                     <h1 class="title-main">Persona 5 Royal</h1>
-                    <p>Seja bem vindo(a) ao meu fansite dedicado a P5R!</p>
+                    <p class="text-neutral-100">Seja bem vindo(a) ao meu fansite dedicado a P5R!</p>
                 </section>
-                <article class="article-box">
-                    <h2>Começando do começo...</h2>
-                    <p>Site com guias, dicas e informações. Sempre atualizado!</p>
+                <article class="article-scroll">
+                    <h2 class="text-xl mb-1">Começando do começo...</h2>
+                    <p class="text-neutral-300">
+                        Este site tem o intuito de reunir informações úteis sobre o jogo, como guias,
+                        dicas e recursos úteis para a sua gameplay. Temos uma variedade de links,
+                        descrições de personagens e muito mais. A página está em constante atualização,
+                        então fique ligado para novidades!
+                    </p>
                 </article>
             </div>
         </main>

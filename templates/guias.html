@@ -1,48 +1,49 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guias - P5R</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
-    </style>
-    <link rel="icon" href="static/imgs/p5rfv.png" type="image/x-icon"/>
+    <link rel="icon" href="static/imgs/p5rfv.png" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .scroll-page {
-                @apply overflow-y-auto h-screen;
+            .bg-black-custom {
+                @apply bg-neutral-900;
+            }
+            .wrapper {
+                @apply bg-black-custom p-4;
             }
             .main-container {
-                @apply bg-neutral-100 border-red-600 border-[10px] border-double flex flex-col mx-auto my-2 md:w-4/5 lg:w-3/5 animate__animated animate__fadeIn;
+                @apply bg-black-custom border border-red-600 rounded-lg mx-auto my-4 md:my-8 md:w-4/5 lg:w-3/5 flex flex-col;
             }
             .header-img {
                 @apply w-full max-h-52 object-cover;
             }
             .nav-menu {
-                @apply flex justify-center items-center bg-neutral-900 text-neutral-100 gap-6 text-lg h-10;
+                @apply flex justify-center items-center bg-black-custom text-neutral-100 gap-6 text-lg h-10;
             }
             .content-area {
                 @apply flex flex-col gap-4 p-2 w-full;
             }
             .article-box {
-                @apply bg-neutral-900 text-neutral-100 p-3 border-black border-[5px] border-double;
+                @apply bg-black-custom text-neutral-100 p-3 border border-black;
             }
             .footer {
                 @apply text-neutral-500 text-center text-sm py-2;
             }
             .title-main {
-                @apply text-3xl font-extrabold text-neutral-900;
+                @apply text-3xl font-extrabold text-neutral-100;
             }
             .link-hover {
-                @apply hover:text-red-600;
+                @apply text-neutral-100 hover:text-red-600;
             }
         }
-    </style>
+  </style>
 </head>
 
-<body class="scroll-page">
+<body class="wrapper">
     <div class="main-container">
         <header>
             <img src="static/imgs/p5r.png" alt="Persona 5 Royal" class="header-img" />
@@ -57,7 +58,7 @@
             <a href="#" class="article-box">Guia para Iniciantes</a>
             <a href="#" class="article-box">Social Links</a>
             <a href="#" class="article-box">Palaces Overview</a>
-            <p class="text-center italic">Mais em breve 👀</p>
+            <p class="text-center italic text-neutral-500">Mais em breve 👀</p>
         </main>
         <footer class="footer">
             <p>©2025 Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>

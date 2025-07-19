@@ -1,130 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>P5R</title>
-    <link rel="stylesheet" href="/static/style.css" />
-    <link rel="icon" href="/static/imgs/p5rfv.png" type="image/x-icon" />
-  </head>
 
-  <body>
-    <div id="all">
-      <div id="sprites">
-            <img src="/static/imgs/jsprite.webp" alt="joker sprite" style="
-            height: 95vh;
-            width: 195px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 12%;
-            align-items: center;">
-            <img src="/static/imgs/fsprite.webp" alt="futaba sprite" style="
-            height: auto;
-            width: 50%;
-            position: relative;
-            transform: translateX(1%);
-            transform: translateY(20%);"> 
-        </div>
-      <div id="main-container" style="margin-top: 20px;">
-        <header id="header">
-          <img src="/static/imgs/p5r.png" alt="Persona 5 Royal" />
-        </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personagens - P5R</title>
+  <link rel="icon" href="static/imgs/p5rfv.png" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .bg-black-custom {
+        @apply bg-neutral-900;
+      }
+      .wrapper {
+        @apply bg-black-custom p-4;
+      }
+      .main-container {
+        @apply bg-black-custom border border-red-600 rounded-lg mx-auto my-4 md:my-8 md:w-4/5 lg:w-3/5 flex flex-col;
+      }
+      .header-img {
+        @apply w-full max-h-52 object-cover;
+      }
+      .nav-menu {
+        @apply flex justify-center items-center bg-black-custom text-neutral-100 gap-6 text-lg h-10;
+      }
+      .sprites-container {
+        @apply hidden lg:flex justify-between items-center w-full relative;
+      }
+      .sprite-left {
+        @apply absolute left-0 h-[95vh] w-48 object-contain;
+      }
+      .sprite-right {
+        @apply relative h-auto w-1/2 object-contain;
+      }
+      .content-area {
+        @apply flex flex-col gap-4 p-2 w-full;
+      }
+      .article-box {
+        @apply bg-black-custom text-neutral-100 p-3 border border-black overflow-hidden;
+      }
+      .footer {
+        @apply text-neutral-500 text-center text-sm py-2;
+      }
+      .title-main {
+        @apply text-3xl font-extrabold text-neutral-100;
+      }
+      .link-hover {
+        @apply text-neutral-100 hover:text-red-600;
+      }
+    }
+  </style>
+</head>
 
-        <nav>
-          <ul>
-            <li><a href="/index.html" class="hover-underline">Home</a></li>
-            <li>
-              <a href="/templates/guias.html" class="hover-underline">Guias</a>
-            </li>
-            <li>
-              <a href="/templates/updates.html" class="hover-underline"
-                >Updates</a
-              >
-            </li>
-          </ul>
-        </nav>
-
-        <main style="flex: 1; overflow-y: scroll">
-          <div
-            id="content"
-            style="
-              padding: 10px;
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
-              margin: 2px;
-              width: 100%;
-              max-width: 100%;
-              height: 46vh;
-              scrollbar-width: thin;
-            "
-          >
-            <span style="display: flex; gap: 14px">
-              <h1
-                style="
-                  font-size: 46px;
-                  font-weight: 750;
-                  text-shadow: 3px 3px 3px #7a7a7a;
-                "
-              >
-                Personagens
-              </h1>
-              <img
-                src="/static/imgs/chapeu.gif"
-                alt="chápeu gif"
-                style="width: 50px; height: 50px"
-              />
-            </span>
-            <a href="#">
-              <article
-                style="
-                  background-image: url(/static/imgs/jheader.jpg);
-                  background-size: cover;
-                "
-              >
-                <h2 style="width: 100%; background-color: #0c0c0cd3">
-                  Joker (Ren Amamiya)
-                </h2>
-              </article>
-            </a>
-
-            <a href="#">
-              <article
-                style="
-                  background-image: url(/static/imgs/fheader.webp);
-                  background-size: cover;
-                "
-              >
-                <h2 style="width: 100%; background-color: #0c0c0cd3">
-                  Futaba Sakura
-                </h2>
-              </article>
-            </a>
-
-            <a href="#">
-              <article
-                style="
-                  background-image: url(/static/imgs/mheader.jpg);
-                  background-size: cover;
-                "
-              >
-                <h2 style="width: 100%; background-color: #0c0c0cd3">
-                  Morgana
-                </h2>
-              </article>
-            </a>
-            <p style="text-align: center">Mais em breve &#128064;</p>
-          </div>
-        </main>
-      </div>
-
-      <div id="footer-container">
-        <footer>
-          <p>© 2025 Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>
-          <p>Site criado por fãs, sem afiliação ou fins lucrativos</p>
-        </footer>
-      </div>
+<body class="wrapper">
+  <div class="main-container">
+    <header>
+      <img src="static/imgs/p5r.png" alt="Persona 5 Royal" class="header-img" />
+    </header>
+    <nav class="nav-menu">
+      <a href="/" class="link-hover">Home</a>
+      <a href="/templates/guias.html" class="link-hover">Guias</a>
+      <a href="/templates/updates.html" class="link-hover">Updates</a>
+    </nav>
+    <div class="sprites-container">
+      <img src="static/imgs/jsprite.webp" alt="joker sprite" class="sprite-left" />
+      <img src="static/imgs/fsprite.webp" alt="futaba sprite" class="sprite-right" />
     </div>
-  </body>
+    <main class="content-area">
+      <h1 class="title-main">Personagens</h1>
+      <a href="#" class="article-box" style="background-image:url('/static/imgs/jheader.jpg');background-size:cover;">
+        <h2 class="bg-black-custom bg-opacity-75 p-1">Joker (Ren Amamiya)</h2>
+      </a>
+      <a href="#" class="article-box" style="background-image:url('/static/imgs/fheader.webp');background-size:cover;">
+        <h2 class="bg-black-custom bg-opacity-75 p-1">Futaba Sakura</h2>
+      </a>
+      <a href="#" class="article-box" style="background-image:url('/static/imgs/mheader.jpg');background-size:cover;">
+        <h2 class="bg-black-custom bg-opacity-75 p-1">Morgana</h2>
+      </a>
+      <p class="text-center italic text-neutral-500">Mais em breve 👀</p>
+    </main>
+    <footer class="footer">
+      <p>©2025 Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>
+      <p>Site criado por fãs, sem afiliação ou fins lucrativos</p>
+    </footer>
+  </div>
+</body>
+
 </html>

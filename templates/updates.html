@@ -2,61 +2,72 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P5R</title>
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="icon" href="/static/imgs/p5rfv.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Updates - P5R</title>
+    <link rel="icon" href="static/imgs/p5rfv.png" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+      .bg-black-custom {
+        @apply bg-neutral-900;
+      }
+      .wrapper {
+        @apply bg-black-custom p-4;
+      }
+      .main-container {
+        @apply bg-black-custom border border-red-600 rounded-lg mx-auto my-4 md:my-8 md:w-4/5 lg:w-3/5 flex flex-col;
+      }
+      .header-img {
+        @apply w-full max-h-52 object-cover;
+      }
+      .nav-menu {
+        @apply flex justify-center items-center bg-black-custom text-neutral-100 gap-6 text-lg h-10;
+      }
+      .content-area {
+        @apply flex flex-col gap-4 p-2 w-full;
+      }
+      .updates-box {
+        @apply bg-black-custom text-neutral-100 p-3 border border-black overflow-y-auto max-h-80;
+      }
+      .footer {
+        @apply text-neutral-500 text-center text-sm py-2;
+      }
+      .title-main {
+        @apply text-3xl font-extrabold text-neutral-100;
+      }
+      .link-hover {
+        @apply text-neutral-100 hover:text-red-600;
+      }
+    }
+  </style>
 </head>
 
-<body>
-    <div id="all">
-        <div id="main-container">
-            <header id="header">
-                <img src="/static/imgs/p5r.png" alt="Persona 5 Royal">
-            </header>
-            <nav>
-                <ul>
-                    <li><a href="/index.html" class="hover-underline">Home</a></li>
-                    <li><a href="/templates/guias.html" class="hover-underline">Guias</a></li>
-                    <li><a href="/templates/updates.html" class="hover-underline">Updates</a></li>
-                </ul>
-            </nav>
-
-            <main style="flex: 1; overflow: hidden;">
-                <div id="content" style="
-                padding: 10px;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                margin: 2px;
-                width: 100%;
-                max-width: 100%;
-                height: 80%;
-                overflow-y: auto;
-                scrollbar-color: #ff0000 #0c0c0c;
-                scrollbar-width: thin;">
-                    <h1 style="font-size: 42px; 
-                        font-weight: 750;
-                        text-shadow: 3px 3px 3px #7a7a7a;">Updates do site</h1>
-                    <article id="article" style="width: 100%;">
-                        <h2 style="margin-bottom: 5px;">Mais recente</h2>
-                        <p>-21/4/25: Fórum upado &#128491;</p>
-                        <p>-21/4/25: Páginas secundárias base iniciadas &#128736;</p>
-                        <p>-20/4/25: Páginas base finalizadas &#128126;</p>
-                        <p>-19/4/25: Páginas base em construção &#128736;</p>
-                        <p>-18/4/25: Começo do desenvolvimento do site&#128640;</p>
-                    </article>
-                </div>
-            </main>
-        </div>
-        
-        <div id="footer-container">
-            <footer>
-                <p>© 2025 Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>
-                <p>Site criado por fãs, sem afiliação ou fins lucrativos</p>
-            </footer>
-        </div>
+<body class="wrapper">
+    <div class="main-container">
+        <header>
+            <img src="static/imgs/p5r.png" alt="Persona 5 Royal" class="header-img" />
+        </header>
+        <nav class="nav-menu">
+            <a href="/" class="link-hover">Home</a>
+            <a href="/templates/guias.html" class="link-hover">Guias</a>
+            <a href="/templates/updates.html" class="link-hover">Updates</a>
+        </nav>
+        <main class="content-area">
+            <h1 class="title-main">Updates do site</h1>
+            <div class="updates-box">
+                <h2 class="text-xl mb-2 text-neutral-100">Mais recente</h2>
+                <p class="text-neutral-300">- 21/4/25: Fórum upado 👍</p>
+                <p class="text-neutral-300">- 21/4/25: Páginas secundárias base iniciadas 🔧</p>
+                <p class="text-neutral-300">- 20/4/25: Páginas base finalizadas 💯</p>
+                <p class="text-neutral-300">- 19/4/25: Páginas base em construção 🔧</p>
+                <p class="text-neutral-300">- 18/4/25: Começo do desenvolvimento do site 🚀</p>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>©2025 Persona 5 Royal Fansite | Conteúdo oficial © ATLUS/Sega</p>
+            <p>Site criado por fãs, sem afiliação ou fins lucrativos</p>
+        </footer>
     </div>
 </body>
 
